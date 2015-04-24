@@ -5,10 +5,10 @@ from string import Template
 
 class ViiComment(sublime_plugin.TextCommand):
     def run(self, edit):
-        self.view.run_command('toggle_comment')
+        self.view.run_command('toggle_comment', {'block': False})
         
         if no_selected_text(self):
-            insert_snippet(self);
+            insert_snippet(self)
 
 def no_selected_text(self):
     # In ST2 view.sel() is a sublime.RegionSet
@@ -19,9 +19,6 @@ def no_selected_text(self):
             return False
     return True
 
-def read_initials():
-    return sublime.load_settings('vii_comment.sublime-settings').get('initials')
-
 def insert_snippet(self):
     today = date.today().strftime('%m/%d/%y')
     initials = read_initials()
@@ -31,3 +28,6 @@ def insert_snippet(self):
     self.view.run_command('insert_snippet', {
         'contents': snippet
     })
+
+def read_initials():
+    return sublime.load_settings('vii_comment.sublime-settings').get('initials')
