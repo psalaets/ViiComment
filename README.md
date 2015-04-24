@@ -25,4 +25,4 @@ Others:
 { "keys": ["ctrl+forward_slash"], "command": "vii_comment" }
 ```
 
-Note: This takes over the shortcut for `toggle_comment` but `vii_comment` acts as `toggle_comment` so it should be okay.
+Note: This takes over the shortcut for `toggle_comment` but `vii_comment` is intended to replace `toggle_comment` so it should be okay.
