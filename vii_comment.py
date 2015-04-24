@@ -7,7 +7,7 @@ class ViiComment(sublime_plugin.TextCommand):
     def run(self, edit):
         self.view.run_command('toggle_comment', {'block': False})
         
-        if enabled() and no_selected_text(self):
+        if no_selected_text(self):
             insert_snippet(self)
 
 def no_selected_text(self):
@@ -31,6 +31,3 @@ def insert_snippet(self):
 
 def read_initials():
     return sublime.load_settings('vii_comment.sublime-settings').get('initials')
-
-def enabled():
-    return sublime.load_settings('vii_comment.sublime-settings').get('enabled')
