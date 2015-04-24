@@ -14,6 +14,13 @@
                   "file": "${packages}/ViiComment/vii_comment.sublime-settings"
                 },
                 "caption": "Settings - Default"
+              },
+              {
+                "caption": "Settings - User",
+                "command": "open_file",
+                "args": {
+                  "file": "${packages}/User/vii_comment.sublime-settings"
+                }
               }
             ]
           }
