@@ -1,0 +1,24 @@
+[
+  {
+    "id": "preferences",
+    "children": [
+      {
+        "id": "package-settings",
+        "children": [
+          {
+            "caption": "ViiComment",
+            "children": [
+              {
+                "command": "open_file",
+                "args": {
+                  "file": "${packages}/ViiComment/vii_comment.sublime-settings"
+                },
+                "caption": "Settings - Default"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
