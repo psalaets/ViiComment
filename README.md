@@ -7,7 +7,15 @@ Clone repo into your Sublime packages directory.
 
 # Set your initials
 
-Go to `Preferences | Package Settings | ViiComment | Settings - Default`
+Go to `Preferences | Package Settings | ViiComment | Settings - User`
+
+and paste
+
+```json
+{
+  "initials": "<your initials here>"
+}
+```
 
 # Set up keyboard shortcut
 
