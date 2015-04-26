@@ -5,9 +5,11 @@ from string import Template
 
 class ViiComment(sublime_plugin.TextCommand):
     def run(self, edit):
+        should_insert_viicomment = should_insert_snippet(self)
+
         self.view.run_command('toggle_comment', {'block': False})
         
-        if should_insert_snippet(self):
+        if should_insert_viicomment:
             insert_snippet(self)
 
 def should_insert_snippet(self):
