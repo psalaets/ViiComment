@@ -22,7 +22,7 @@ def cursor_lines_are_blank(self):
 
 # param: string
 def is_blank(line):
-    return bool(line) or line.isspace()
+    return not line or line.isspace()
 
 def no_selected_text(self):
     # In ST2 view.sel() is a sublime.RegionSet
