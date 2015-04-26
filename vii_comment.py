@@ -7,8 +7,22 @@ class ViiComment(sublime_plugin.TextCommand):
     def run(self, edit):
         self.view.run_command('toggle_comment', {'block': False})
         
-        if no_selected_text(self):
+        if should_insert_snippet(self):
             insert_snippet(self)
+
+def should_insert_snippet(self):
+    return no_selected_text(self) and cursor_lines_are_blank(self)
+
+def cursor_lines_are_blank(self):
+    for region in self.view.sel():
+        cursor_line = self.view.line(region.begin())
+        if not is_blank(self.view.substr(cursor_line)):
+            return False
+    return True
+
+# param: string
+def is_blank(line):
+    return bool(line) or line.isspace()
 
 def no_selected_text(self):
     # In ST2 view.sel() is a sublime.RegionSet
