@@ -8,7 +8,7 @@ class ViiComment(sublime_plugin.TextCommand):
         should_insert_viicomment = should_insert_snippet(self)
 
         self.view.run_command('toggle_comment', {'block': False})
-        
+
         if should_insert_viicomment:
             insert_snippet(self)
 
@@ -32,9 +32,9 @@ def is_blank(line):
 def insert_snippet(self):
     today = date.today().strftime('%m/%d/%y')
     initials = read_initials()
-    
+
     snippet = Template('${initials} - $$1 ${date}').substitute(date=today, initials=initials)
-    
+
     self.view.run_command('insert_snippet', {
         'contents': snippet
     })
