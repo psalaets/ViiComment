@@ -33,4 +33,4 @@ Others:
 { "keys": ["ctrl+forward_slash"], "command": "vii_comment" }
 ```
 
-Note: This takes over the shortcut for `toggle_comment` but `vii_comment` is intended to replace `toggle_comment` so it should be okay.
+Note: This takes over the shortcut for `toggle_comment` but `vii_comment` only fires if current line is blank. If there is any text on the line `vii_comment` just invokes `toggle_comment`.
